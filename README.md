@@ -1,6 +1,6 @@
 # Lennart Land
 
-Små browserspil med Lennart: Ørkenhop og Dansegulvet.
+Små browserspil med Lennart.
 
 Spil det på GitHub Pages, eller åbn mappen med en lokal webserver (spillene hentes med fetch, så de virker ikke ved bare at dobbeltklikke på index.html).
 
