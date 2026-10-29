@@ -80,10 +80,11 @@ body{margin:0;background:var(--night);color:var(--cream);font-family:var(--body)
 
 <script>
 (()=>{
-/* Add new games here: drop the game file in games/ and a 16:9 picture in thumbs/ */
+/* Add new games here: drop the game file in spil- and a 16:9 picture in billede- */
 const GAMES=[
   {id:'oerkenhop',name:'Ørkenhop',file:'spil-oerkenhop.html',thumb:'billede-oerkenhop.webp',desc:'Løb, hop og saml mønter gennem ørkenen. To baner.'},
   {id:'dansegulvet',name:'Dansegulvet',file:'spil-dansegulvet.html',thumb:'billede-dansegulvet.webp',desc:'Dans i takt med musikken, og få Lennart til at moonwalke.'},
+  {id:'kamelloeb',name:'Kamelløb',file:'spil-kamelloeb.html',thumb:'billede-kamelloeb.webp',desc:'Løb så langt du kan. Hop over kaktusser og duk dig for gribbene.'},
 ];
 const $=s=>document.querySelector(s);
 const wrap=$('#games');let sel=0;
@@ -116,6 +117,11 @@ function close(){if(frame){frame.remove();frame=null;}cur=-1;player.hidden=true;
   const b=wrap.querySelectorAll('.game')[sel];if(b)b.focus({preventScroll:true});}
 $('#back').addEventListener('click',close);
 window.addEventListener('message',e=>{if(frame&&e.source===frame.contentWindow&&e.data&&e.data.lennart==='exit')close();});
+['keydown','keyup'].forEach(type=>window.addEventListener(type,e=>{
+  if(player.hidden||!frame)return;
+  try{frame.contentWindow.dispatchEvent(new KeyboardEvent(type,{key:e.key,code:e.code,repeat:e.repeat,shiftKey:e.shiftKey,bubbles:true,cancelable:true}));frame.contentWindow.focus();}catch(_){}
+  if([' ','ArrowUp','ArrowDown','ArrowLeft','ArrowRight'].includes(e.key))e.preventDefault();
+}));
 window.addEventListener('keydown',e=>{
   if(!player.hidden)return;
   const n=GAMES.length;
