@@ -36,14 +36,14 @@ body{margin:0;background:var(--night);color:var(--cream);font-family:var(--body)
 .brand p{margin:.6em 0 0;font-size:clamp(15px,1.6vw,24px);color:var(--muted)}
 .brand img{width:min(80%,340px);margin-top:clamp(8px,3vh,32px);filter:drop-shadow(0 14px 12px rgba(0,0,0,.35));transform-origin:50% 100%;animation:bob 1.1s ease-in-out infinite}
 @keyframes bob{0%,100%{transform:translateY(0) scale(1.02,.98)}50%{transform:translateY(-10px) scale(1)}}
-.games{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:clamp(14px,2vw,28px);min-width:0;align-content:center}
+.games{display:grid;align-items:stretch;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:clamp(14px,2vw,28px);min-width:0;align-content:center}
 .game{display:flex;flex-direction:column;text-align:left;padding:0;border:3px solid var(--line);border-radius:22px;background:var(--card);color:inherit;font:inherit;
   overflow:hidden;cursor:pointer;transition:transform .15s,border-color .15s,box-shadow .15s;touch-action:manipulation}
 .game .shot{aspect-ratio:16/9;width:100%;max-width:100%;display:block;object-fit:cover;background:#120b20}
-.game .info{padding:clamp(12px,1.6vw,22px);display:flex;flex-direction:column;gap:.3em}
+.game .info{padding:clamp(12px,1.6vw,22px);display:flex;flex-direction:column;gap:.3em;flex:1}
 .game h2{margin:0;font-family:var(--display);font-weight:400;font-size:clamp(26px,2.8vw,44px);color:var(--sand);line-height:1}
-.game span{color:var(--muted);font-size:clamp(14px,1.3vw,20px);line-height:1.35}
-.game .play{margin-top:.5em;align-self:flex-start;background:var(--camel);color:#3a1d0c;font-weight:700;border-radius:999px;padding:.35em 1.1em;font-size:clamp(16px,1.5vw,24px)}
+.game span{margin-bottom:.6em;color:var(--muted);font-size:clamp(14px,1.3vw,20px);line-height:1.35}
+.game .play{margin-top:auto;align-self:flex-start;background:var(--camel);color:#3a1d0c;font-weight:700;border-radius:999px;padding:.35em 1.1em;font-size:clamp(16px,1.5vw,24px)}
 .game.sel,.game:hover{border-color:var(--camel);transform:translateY(-4px);box-shadow:0 10px 0 #a3561f,0 0 40px rgba(240,174,76,.35)}
 .game:focus-visible{outline:4px solid var(--cream);outline-offset:4px}
 .soon{border:3px dashed var(--line);border-radius:22px;display:grid;place-content:center;text-align:center;padding:24px;color:var(--muted);min-height:200px}
@@ -82,9 +82,11 @@ body{margin:0;background:var(--night);color:var(--cream);font-family:var(--body)
 (()=>{
 /* Add new games here: drop the game file in spil- and a 16:9 picture in billede- */
 const GAMES=[
-  {id:'oerkenhop',name:'Ørkenhop',file:'spil-oerkenhop.html',thumb:'billede-oerkenhop.webp',desc:'Løb, hop og saml mønter gennem ørkenen. To baner.'},
+  {id:'oerkenhop',name:'Ørkenhop',file:'spil-oerkenhop.html',thumb:'billede-oerkenhop.webp',desc:'Løb, hop og saml mønter gennem ørkenen. To baner og en julebane.'},
   {id:'dansegulvet',name:'Dansegulvet',file:'spil-dansegulvet.html',thumb:'billede-dansegulvet.webp',desc:'Dans i takt med musikken, og få Lennart til at moonwalke.'},
   {id:'kamelloeb',name:'Kamelløb',file:'spil-kamelloeb.html',thumb:'billede-kamelloeb.webp',desc:'Løb så langt du kan. Hop over kaktusser og duk dig for gribbene.'},
+  {id:'boblejagt',name:'Boblejagt',file:'spil-boblejagt.html',thumb:'billede-boblejagt.webp',desc:'Skyd boblerne i stykker, før de rammer Lennart. Otte baner.'},
+  {id:'kabum',name:'Kamel-Kabum',file:'spil-kabum.html',thumb:'billede-kabum.webp',desc:'Læg bomber, spræng kasser og vær den sidste, der står. 1 eller 2 spillere.'},
 ];
 const $=s=>document.querySelector(s);
 const wrap=$('#games');let sel=0;
