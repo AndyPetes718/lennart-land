@@ -81,13 +81,14 @@ body{margin:0;background:var(--night);color:var(--cream);font-family:var(--body)
 <script>
 (()=>{
 /* Add new games here: drop the game file in spil- and a 16:9 picture in billede- */
+// Pyramideflugt er parkeret, indtil den er færdig:
+// {id:'pyramideflugt',name:'Pyramideflugt',file:'spil-pyramideflugt.html',thumb:'billede-pyramideflugt.webp',desc:'Løb fra mumien gennem pyramidens gange. Hop, glid og drej i tide.'},
 const GAMES=[
   {id:'oerkenhop',name:'Ørkenhop',file:'spil-oerkenhop.html',thumb:'billede-oerkenhop.webp',desc:'Løb, hop og saml mønter gennem ørkenen. To baner og en julebane.'},
   {id:'dansegulvet',name:'Dansegulvet',file:'spil-dansegulvet.html',thumb:'billede-dansegulvet.webp',desc:'Dans i takt med musikken, og få Lennart til at moonwalke.'},
   {id:'kamelloeb',name:'Kamelløb',file:'spil-kamelloeb.html',thumb:'billede-kamelloeb.webp',desc:'Løb så langt du kan. Hop over kaktusser og duk dig for gribbene.'},
   {id:'boblejagt',name:'Boblejagt',file:'spil-boblejagt.html',thumb:'billede-boblejagt.webp',desc:'Skyd boblerne i stykker, før de rammer Lennart. Otte baner.'},
   {id:'kabum',name:'Kamel-Kabum',file:'spil-kabum.html',thumb:'billede-kabum.webp',desc:'Læg bomber, spræng kasser og vær den sidste, der står. 1 eller 2 spillere.'},
-  {id:'pyramideflugt',name:'Pyramideflugt',file:'spil-pyramideflugt.html',thumb:'billede-pyramideflugt.webp',desc:'Løb fra mumien gennem pyramidens gange. Hop, glid og drej i tide.'},
   {id:'kamelflyv',name:'Kamelflyv',file:'spil-kamelflyv.html',thumb:'billede-kamelflyv.webp',desc:'Flyv med propelhatten gennem hullerne mellem obeliskerne.'},
 ];
 const $=s=>document.querySelector(s);
