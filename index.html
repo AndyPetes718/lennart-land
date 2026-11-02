@@ -41,7 +41,7 @@ body{margin:0;background:var(--night);color:var(--cream);font-family:var(--body)
   overflow:hidden;cursor:pointer;transition:transform .15s,border-color .15s,box-shadow .15s;touch-action:manipulation}
 .game .shot{aspect-ratio:16/9;width:100%;max-width:100%;display:block;object-fit:cover;background:#120b20}
 .game .info{padding:clamp(12px,1.6vw,22px);display:flex;flex-direction:column;gap:.3em;flex:1}
-.game h2{margin:0;font-family:var(--display);font-weight:400;font-size:clamp(26px,2.8vw,44px);color:var(--sand);line-height:1}
+.game h2{margin:0;font-family:var(--display);font-weight:400;font-size:clamp(22px,2.4vw,40px);overflow-wrap:anywhere;color:var(--sand);line-height:1}
 .game span{margin-bottom:.6em;color:var(--muted);font-size:clamp(14px,1.3vw,20px);line-height:1.35}
 .game .play{margin-top:auto;align-self:flex-start;background:var(--camel);color:#3a1d0c;font-weight:700;border-radius:999px;padding:.35em 1.1em;font-size:clamp(16px,1.5vw,24px)}
 .game.sel,.game:hover{border-color:var(--camel);transform:translateY(-4px);box-shadow:0 10px 0 #a3561f,0 0 40px rgba(240,174,76,.35)}
@@ -87,6 +87,8 @@ const GAMES=[
   {id:'kamelloeb',name:'Kamelløb',file:'spil-kamelloeb.html',thumb:'billede-kamelloeb.webp',desc:'Løb så langt du kan. Hop over kaktusser og duk dig for gribbene.'},
   {id:'boblejagt',name:'Boblejagt',file:'spil-boblejagt.html',thumb:'billede-boblejagt.webp',desc:'Skyd boblerne i stykker, før de rammer Lennart. Otte baner.'},
   {id:'kabum',name:'Kamel-Kabum',file:'spil-kabum.html',thumb:'billede-kabum.webp',desc:'Læg bomber, spræng kasser og vær den sidste, der står. 1 eller 2 spillere.'},
+  {id:'pyramideflugt',name:'Pyramideflugt',file:'spil-pyramideflugt.html',thumb:'billede-pyramideflugt.webp',desc:'Løb fra mumien gennem pyramidens gange. Hop, glid og drej i tide.'},
+  {id:'kamelflyv',name:'Kamelflyv',file:'spil-kamelflyv.html',thumb:'billede-kamelflyv.webp',desc:'Flyv med propelhatten gennem hullerne mellem obeliskerne.'},
 ];
 const $=s=>document.querySelector(s);
 const wrap=$('#games');let sel=0;
