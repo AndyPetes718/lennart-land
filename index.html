@@ -5,6 +5,26 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Lennart Land</title>
 <meta name="claude:viewport-fit-sides" content="cover">
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#1b1230">
+<link rel="icon" type="image/png" href="ikon-64.png">
+<link rel="apple-touch-icon" href="ikon-apple.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Lennart Land">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<style>
+#installBtn{position:fixed;right:max(16px,env(safe-area-inset-right,0px));bottom:16px;z-index:4;font-family:"Fredoka","Trebuchet MS",sans-serif;font-weight:700;font-size:18px;
+  border:3px solid rgba(255,246,230,.6);border-radius:999px;background:#f0ae4c;color:#3a1d0c;padding:.45em 1.2em;cursor:pointer;box-shadow:0 5px 0 #a3561f}
+</style>
+<script>
+if('serviceWorker' in navigator)addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{}));
+let lennartInstall=null;
+addEventListener('beforeinstallprompt',e=>{e.preventDefault();lennartInstall=e;let b=document.getElementById('installBtn');
+  if(!b){b=document.createElement('button');b.id='installBtn';b.textContent='Installer som app';document.body.appendChild(b);
+    b.addEventListener('click',async()=>{b.remove();lennartInstall.prompt();try{await lennartInstall.userChoice}catch(_){}lennartInstall=null;});}});
+addEventListener('appinstalled',()=>{const b=document.getElementById('installBtn');if(b)b.remove();});
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Lilita+One&display=swap">
 <style>
