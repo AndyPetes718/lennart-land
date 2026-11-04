@@ -1,5 +1,5 @@
 // Lennart Land – offline-hjælper. Hent altid nyeste version, når der er net; brug gemt kopi uden net.
-const CACHE='lennart-land-v1';
+const CACHE='lennart-land-v2';
 const FILES=[
   './billede-boblejagt.webp',
   './billede-dansegulvet.webp',
@@ -8,6 +8,7 @@ const FILES=[
   './billede-kamelflyv.webp',
   './billede-kamelloeb.webp',
   './billede-oerkenhop.webp',
+  './billede-roedtlys.webp',
   './ikon-192.png',
   './ikon-512.png',
   './ikon-64.png',
@@ -22,7 +23,8 @@ const FILES=[
   './spil-kabum.html',
   './spil-kamelflyv.html',
   './spil-kamelloeb.html',
-  './spil-oerkenhop.html'
+  './spil-oerkenhop.html',
+  './spil-roedtlys.html'
 ];
 self.addEventListener('install',e=>{e.waitUntil(caches.open(CACHE).then(c=>Promise.all(FILES.map(f=>c.add(new Request(f,{cache:'reload'})).catch(()=>{})))).then(()=>self.skipWaiting()));});
 self.addEventListener('activate',e=>{e.waitUntil(caches.keys().then(ks=>Promise.all(ks.filter(k=>k!==CACHE&&k.startsWith('lennart-land')).map(k=>caches.delete(k)))).then(()=>self.clients.claim()));});
